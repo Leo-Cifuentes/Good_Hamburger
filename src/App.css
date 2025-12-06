@@ -38,12 +38,19 @@ button{
   border: none;
 }
 .filter-button{
-  background: var(--red-color);
+  background: var(--red-off-color);
   color: var(--text-white-color);
+  border: solid 1px var(--red-off-color);
   border-radius: 14px;
 }
 .filter-button:hover{
-  background: var(--red-off-color);
+  background: var(--bg-color);
+  color: var(--red-color);
+  border: solid 1px var(--red-color);
+}
+.filter-button-active{
+  background: var(--red-color);
+  border: solid 1px var(--red-color);
 }
 .card-class{
   background: var(--card-color);

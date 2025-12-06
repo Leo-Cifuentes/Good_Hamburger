@@ -29,7 +29,7 @@ const Menu = () => {
 
         const fetchData = async () => {
             try {
-                await delay(100);
+                await delay(1000);
                 const response = await fetch(URL_API_REQUEST);
                 if (!response.ok) {
                     throw new Error(`Error con la información. Código de estado: ${response.status}`);
@@ -47,7 +47,14 @@ const Menu = () => {
 
     if (isLoading) {
         return (
-            <div>Loading...</div>
+            <>
+                <div className=" col-12 col-md-8 d-flex justify-content-center my-5 py-5">
+                    <div className="spinner-border text-danger" role="status">                        
+                    </div>
+                    <h2 className="mx-1">Loading...</h2>
+                </div>
+
+            </>
         )
     }
     if (error) {
@@ -78,17 +85,17 @@ const Menu = () => {
         setOrderData(newList);
     }
 
-    const handleFilter = (innerText : string) => {
+    const handleFilter = (innerText: string) => {
         setFilter(innerText);
     }
 
     return (
         <>
-            <div className="col-12 col-md-8 px-2 mb-3">
+            <div className="col-12 col-md-8 px-2 my-3">
                 <div className="d-flex justify-content-evenly">
-                    <FilterButton handler={handleFilter} innerText="All" />
-                    <FilterButton handler={handleFilter} innerText="Sandwiches" />
-                    <FilterButton handler={handleFilter} innerText="Extras" />
+                    <FilterButton handler={handleFilter} isActive={filter === "All"} innerText="All" />
+                    <FilterButton handler={handleFilter} isActive={filter === "Sandwiches"} innerText="Sandwiches" />
+                    <FilterButton handler={handleFilter} isActive={filter === "Extras"} innerText="Extras" />
                 </div>
                 {
                     (filter === "All" || filter === "Sandwiches") &&
@@ -135,7 +142,7 @@ const Menu = () => {
                         }
                     </div>
                 }
-            </div>
+            </div>            
         </>
     )
 }
