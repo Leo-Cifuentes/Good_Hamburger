@@ -80,23 +80,6 @@ This command:
 - Optimizes and bundles the application with Vite
 - Generates the `dist/` folder ready for deployment
 
-### Preview
-
-View the compiled production version locally:
-
-```bash
-npm run preview
-```
-
-Useful for testing the build before deployment.
-
-### Linting
-
-Run code analysis to detect errors and maintain standards:
-
-```bash
-npm run lint
-```
 
 ## 📁 Project Structure
 
